@@ -22,40 +22,44 @@ interface JobCardProps {
 
 const greenStatuses = [STATUSES.active, STATUSES.completed];
 
-export const JobCard = ({ job, status, actions, readOnlyMode, allowRetries }: JobCardProps) => (
-  <div className={s.card}>
-    <div className={s.sideInfo}>
-      <span title={`#${job.id}`}>#{job.id}</span>
-      <Timeline job={job} status={status} />
-    </div>
-    <div className={s.contentWrapper}>
-      <div className={s.title}>
-        <h4>
-          {job.name}
-          {job.attempts > 1 && <span>attempt #{job.attempts}</span>}
-          {!!job.opts?.repeat?.count && (
-            <span>
-              repeat {job.opts?.repeat?.count}
-              {!!job.opts?.repeat?.limit && ` / ${job.opts?.repeat?.limit}`}
-            </span>
+export const JobCard = ({ job, status, actions, readOnlyMode, allowRetries }: JobCardProps) => {
+  // const isGreen = greenStatuses.includes('active');
+  console.log('job', job);
+  return (
+    <div className={s.card}>
+      <div className={s.sideInfo}>
+        <span title={`#${job.id}`}>#{job.id}</span>
+        <Timeline job={job} status={status} />
+      </div>
+      <div className={s.contentWrapper}>
+        <div className={s.title}>
+          <h4>
+            {job.name}
+            {job.attempts > 1 && <span>attempt #{job.attempts}</span>}
+            {!!job.opts?.repeat?.count && (
+              <span>
+                repeat {job.opts?.repeat?.count}
+                {!!job.opts?.repeat?.limit && ` / ${job.opts?.repeat?.limit}`}
+              </span>
+            )}
+          </h4>
+          {!readOnlyMode && (
+            <JobActions status={status} actions={actions} allowRetries={allowRetries} />
           )}
-        </h4>
-        {!readOnlyMode && (
-          <JobActions status={status} actions={actions} allowRetries={allowRetries} />
-        )}
-      </div>
-      <div className={s.content}>
-        <Details status={status} job={job} actions={actions} />
-        {typeof job.progress === 'number' && (
-          <Progress
-            percentage={job.progress}
-            status={
-              job.isFailed && !greenStatuses.includes(status as any) ? STATUSES.failed : status
-            }
-            className={s.progress}
-          />
-        )}
+        </div>
+        <div className={s.content}>
+          <Details status={status} job={job} actions={actions} />
+          {typeof job.progress === 'number' && (
+            <Progress
+              percentage={job.progress}
+              status={
+                job.isFailed && !greenStatuses.includes(status as any) ? STATUSES.failed : status
+              }
+              className={s.progress}
+            />
+          )}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};

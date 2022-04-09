@@ -8,7 +8,7 @@ import { createBullBoard } from '@1nhealth/api';
 import { ExpressAdapter } from '@1nhealth/express';
 
 const redisOptions = {
-  port: 6379,
+  port: 6383,
   host: 'localhost',
   password: '',
 };
@@ -57,8 +57,8 @@ async function setupBullMQProcessor(queueName: string) {
 const run = async () => {
   const app = express();
 
-  const exampleBull = createQueue3('ExampleBull');
-  const exampleBullMq = createQueueMQ('ExampleBullMQ');
+  const exampleBull = createQueue3('facebook');
+  const exampleBullMq = createQueueMQ('aggregate_campaigns');
 
   await setupBullProcessor(exampleBull); // needed only for example proposes
   await setupBullMQProcessor(exampleBullMq.name); // needed only for example proposes

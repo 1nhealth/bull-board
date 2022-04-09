@@ -3,6 +3,7 @@ import { TabsType } from '../../../../hooks/useDetailsTabs';
 import { Highlight } from '../../../Highlight/Highlight';
 import { JobLogs } from './JobLogs/JobLogs';
 import { AppJob } from '@1nhealth/api/typings/app';
+import ReactJson from 'react-json-view';
 
 interface DetailsContentProps {
   job: AppJob;
@@ -19,8 +20,10 @@ export const DetailsContent = ({
 }: DetailsContentProps) => {
   switch (selectedTab) {
     case 'Data':
+      return <ReactJson name={false} iconStyle="square" displayDataTypes={false} src={data} />;
+    case 'Return Value':
       return (
-        <Highlight language="json">{JSON.stringify({ data, returnValue }, null, 2)}</Highlight>
+        <ReactJson name={false} iconStyle="square" displayDataTypes={false} src={returnValue} />
       );
     case 'Options':
       return <Highlight language="json">{JSON.stringify(opts, null, 2)}</Highlight>;
