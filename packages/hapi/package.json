@@ -1,6 +1,6 @@
 {
   "name": "@1nhealth/hapi",
-  "version": "3.10.6",
+  "version": "3.10.7",
   "description": "Hapi.js server adapter for Bull-Board package",
   "keywords": [
     "bull",
@@ -29,8 +29,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@1nhealth/api": "3.10.6",
-    "@1nhealth/ui": "3.10.6",
+    "@1nhealth/api": "3.10.7",
+    "@1nhealth/ui": "3.10.7",
     "@hapi/inert": "^6.0.5",
     "@hapi/vision": "^6.1.0",
     "ejs": "^3.1.6"
