@@ -1,5 +1,5 @@
 {
-  "name": "@bull-board/koa",
+  "name": "@1nhealth/koa",
   "version": "3.10.3",
   "description": "Koa.js server adapter for Bull-Board package",
   "keywords": [
@@ -28,8 +28,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@bull-board/api": "3.10.3",
-    "@bull-board/ui": "3.10.3",
+    "@1nhealth/api": "3.10.3",
+    "@1nhealth/ui": "3.10.3",
     "ejs": "^3.1.6",
     "koa": "^2.13.1",
     "koa-mount": "^4.0.0",

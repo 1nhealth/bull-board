@@ -1,4 +1,4 @@
-import * as bullBoard from '@bull-board/api';
+import * as bullBoard from '@1nhealth/api';
 
 describe('lib public interface', () => {
   it('should save the interface', () => {

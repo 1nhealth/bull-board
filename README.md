@@ -1,4 +1,4 @@
-# <img alt="@bull-board" src="https://raw.githubusercontent.com/felixmosh/bull-board/master/packages/ui/src/static/images/logo.svg" width="35px" /> @bull-board
+# <img alt="@1nhealth" src="https://raw.githubusercontent.com/felixmosh/bull-board/master/packages/ui/src/static/images/logo.svg" width="35px" /> @1nhealth
 
 Bull Dashboard is a UI built on top of [Bull](https://github.com/OptimalBits/bull) or [BullMQ](https://github.com/taskforcesh/bullmq) to help you visualize your queues and their jobs.
 With this library you get a beautiful UI for visualizing what's happening with each job in your queues, their status and some actions that will enable you to get the job done.
@@ -32,23 +32,23 @@ If you want to learn more about queues ([Bull](https://github.com/OptimalBits/bu
 To add it to your project start by installing a server framework specific adapter to your dependencies list:
 
 ```sh
-yarn add @bull-board/express
+yarn add @1nhealth/express
 # or
-yarn add @bull-board/fastify
+yarn add @1nhealth/fastify
 # or
-yarn add @bull-board/hapi
+yarn add @1nhealth/hapi
 # or
-yarn add @bull-board/koa
+yarn add @1nhealth/koa
 ```
 Or
 ```sh
-npm i @bull-board/express
+npm i @1nhealth/express
 # or
-npm i @bull-board/fastify
+npm i @1nhealth/fastify
 # or
-npm i @bull-board/hapi
+npm i @1nhealth/hapi
 # or
-npm i @bull-board/koa
+npm i @1nhealth/koa
 ```
 
 ## Hello World
@@ -57,10 +57,10 @@ npm i @bull-board/koa
 const express = require('express')
 const Queue = require('bull')
 const QueueMQ = require('bullmq')
-const { createBullBoard } = require('@bull-board/api')
-const { BullAdapter } = require('@bull-board/api/bullAdapter')
-const { BullMQAdapter } = require('@bull-board/api/bullMQAdapter')
-const { ExpressAdapter } = require('@bull-board/express')
+const { createBullBoard } = require('@1nhealth/api')
+const { BullAdapter } = require('@1nhealth/api/bullAdapter')
+const { BullMQAdapter } = require('@1nhealth/api/bullMQAdapter')
+const { ExpressAdapter } = require('@1nhealth/express')
 
 const someQueue = new Queue('someQueueName')
 const someOtherQueue = new Queue('someOtherQueueName')
@@ -101,9 +101,9 @@ Makes the UI as read only, hides all queue & job related actions
 ```js
 const Queue = require('bull')
 const QueueMQ = require('bullmq')
-const { createBullBoard } = require('@bull-board/api')
-const { BullMQAdapter } = require('@bull-board/api/bullMQAdapter')
-const { BullAdapter } = require('@bull-board/api/bullAdapter')
+const { createBullBoard } = require('@1nhealth/api')
+const { BullMQAdapter } = require('@1nhealth/api/bullMQAdapter')
+const { BullAdapter } = require('@1nhealth/api/bullAdapter')
 
 const someQueue = new Queue()
 const someOtherQueue = new Queue()
@@ -123,9 +123,9 @@ When set to `false` the UI removes the job retry buttons for a queue. This optio
 
 ```js
 const QueueMQ = require('bullmq')
-const { createBullBoard } = require('@bull-board/api')
-const { BullMQAdapter } = require('@bull-board/api/bullMQAdapter')
-const { BullAdapter } = require('@bull-board/api/bullAdapter')
+const { createBullBoard } = require('@1nhealth/api')
+const { BullMQAdapter } = require('@1nhealth/api/bullMQAdapter')
+const { BullAdapter } = require('@1nhealth/api/bullAdapter')
 
 const someQueue = new Queue()
 const someOtherQueue = new Queue()
@@ -146,9 +146,9 @@ If you host your express service on a different path than root (/) ie. https://<
 
 ```js
 const Queue = require('bull')
-const { createBullBoard } = require('@bull-board/api')
-const { BullAdapter } = require('@bull-board/api/bullAdapter')
-const { ExpressAdapter } = require('@bull-board/express')
+const { createBullBoard } = require('@1nhealth/api')
+const { BullAdapter } = require('@1nhealth/api/bullAdapter')
+const { ExpressAdapter } = require('@1nhealth/express')
 
 const someQueue = new Queue('someQueueName')
 

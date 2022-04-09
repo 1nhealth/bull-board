@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Status } from '@bull-board/api/typings/app';
-import { STATUSES } from '@bull-board/api/src/constants/statuses';
+import { Status } from '@1nhealth/api/typings/app';
+import { STATUSES } from '@1nhealth/api/src/constants/statuses';
 
 const regularItems = ['Data', 'Options', 'Logs'] as const;
 

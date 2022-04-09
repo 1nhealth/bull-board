@@ -1,6 +1,6 @@
-const { createBullBoard } = require('@bull-board/api');
-const { BullMQAdapter } = require('@bull-board/api/bullMQAdapter');
-const { FastifyAdapter } = require('@bull-board/fastify');
+const { createBullBoard } = require('@1nhealth/api');
+const { BullMQAdapter } = require('@1nhealth/api/bullMQAdapter');
+const { FastifyAdapter } = require('@1nhealth/fastify');
 const { Queue: QueueMQ, Worker, QueueScheduler } = require('bullmq');
 const fastify = require('fastify');
 

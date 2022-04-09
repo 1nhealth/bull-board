@@ -1,5 +1,5 @@
-import { AppJob } from '@bull-board/api/typings/app';
-import { GetQueuesResponse } from '@bull-board/api/typings/responses';
+import { AppJob } from '@1nhealth/api/typings/app';
+import { GetQueuesResponse } from '@1nhealth/api/typings/responses';
 import { useState } from 'react';
 import { QueueActions, SelectedStatuses } from '../../typings/app';
 
