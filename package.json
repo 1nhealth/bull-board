@@ -1,7 +1,7 @@
 {
   "name": "@1nhealth/root",
   "version": "3.10.3",
-  "private": true,
+  "private": false,
   "description": "Bull queue UI for inspecting jobs",
   "keywords": [
     "bull",
@@ -27,9 +27,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/1nhealth"
-  },
   "scripts": {
     "prepublishOnly": "yarn build",
     "lint": "eslint \"./packages/**/*.ts*\"",

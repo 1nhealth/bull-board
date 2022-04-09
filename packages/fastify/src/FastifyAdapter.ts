@@ -4,6 +4,8 @@ import {
   BullBoardQueues,
   ControllerHandlerReturnType,
   IServerAdapter,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
 } from '@1nhealth/bull-board/api/dist/typings/app';
 import { FastifyInstance } from 'fastify';
 import pointOfView from 'point-of-view';
@@ -52,8 +54,12 @@ export class FastifyAdapter implements IServerAdapter {
       const routes = Array.isArray(routeRaw.route) ? routeRaw.route : [routeRaw.route];
       const methods = Array.isArray(routeRaw.method) ? routeRaw.method : [routeRaw.method];
 
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       routes.forEach((route) => {
         result.push({
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           method: methods.map((method) => method.toUpperCase()) as unknown as HTTPMethods,
           route,
           handler: routeRaw.handler,
