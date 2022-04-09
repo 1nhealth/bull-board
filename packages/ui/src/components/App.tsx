@@ -16,7 +16,10 @@ export const App = ({ api }: { api: Api }) => {
 
   return (
     <>
-      <Header>{state.data?.stats && <RedisStats stats={state.data?.stats} />}</Header>
+      <Header>
+        <h1>APPLES AND GRAPES</h1>
+        {state.data?.stats && <RedisStats stats={state.data?.stats} />}
+      </Header>
       <main>
         <div>
           {state.loading ? (
