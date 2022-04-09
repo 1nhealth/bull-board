@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as Bull from 'bull';
 import Queue3 from 'bull';
 import { Queue as QueueMQ, QueueScheduler, Worker } from 'bullmq';

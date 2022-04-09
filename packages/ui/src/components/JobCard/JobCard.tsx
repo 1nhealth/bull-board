@@ -23,8 +23,6 @@ interface JobCardProps {
 const greenStatuses = [STATUSES.active, STATUSES.completed];
 
 export const JobCard = ({ job, status, actions, readOnlyMode, allowRetries }: JobCardProps) => {
-  // const isGreen = greenStatuses.includes('active');
-  console.log('job', job);
   return (
     <div className={s.card}>
       <div className={s.sideInfo}>
